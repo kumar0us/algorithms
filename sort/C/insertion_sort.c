@@ -19,7 +19,7 @@ compare(int);
 #define insertion_sort(type) 					\
     void insertion_sort_##type(type array[], int count)		\
 {								\
-    int i = 0, j = 0;						\
+    int i = 0, j = 0, tmp = 0;					\
     for (i = 1; i < count; i++)					\
     {								\
 	j = i;							\
@@ -27,7 +27,7 @@ compare(int);
 	{							\
 	    if (compare_##type(array[j], array[j-1]) < 0)	\
 	    {							\
-		int tmp = array[j];				\
+		tmp = array[j];					\
 		array[j] = array[j-1];				\
 		array[j-1] = tmp;				\
 	    }							\
