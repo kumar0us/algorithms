@@ -1,0 +1,22 @@
+using namespace std;
+
+template <class RandomAccessIterator>
+void insertion_sort (RandomAccessIterator begin, RandomAccessIterator end)
+{
+    if (begin == end)
+	return;
+
+    RandomAccessIterator tmp;
+    for (RandomAccessIterator i = begin+1; i < end; i++)
+    {
+	RandomAccessIterator j = i;
+	do
+	{
+	    if (*j < *(j-1))
+	    {
+		std::swap(*j,*(j-1));
+	    }
+	    j--;
+	} while ((*j < *(j-1)) && (j > begin));
+    }
+}
